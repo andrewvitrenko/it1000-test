@@ -1,0 +1,12 @@
+<div class="container">
+  <span class="hours">{{ hours | timeFormat }} : </span>
+  <span class="minutes">{{ minutes | timeFormat }} : </span>
+  <span class="seconds">{{ seconds | timeFormat}}</span>
+
+  <div class="actions">
+    <button class="start" (click)="start()" *ngIf="status === 'paused'; else stopTimer">Start</button>
+    <ng-template #stopTimer><button class="stop" (click)="stop()">Stop</button></ng-template>
+    <button class="wait" (click)="wait()">Wait</button>
+    <button class="reset" (click)="reset()">Reset</button>
+  </div>
+</div>
